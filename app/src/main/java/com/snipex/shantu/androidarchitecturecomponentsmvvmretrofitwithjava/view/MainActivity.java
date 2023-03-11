@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.snipex.shantu.androidarchitecturecomponentsmvvmretrofitwithjava.R;
-import com.snipex.shantu.androidarchitecturecomponentsmvvmretrofitwithjava.adapter.MovieArticleAdapter;
-import com.snipex.shantu.androidarchitecturecomponentsmvvmretrofitwithjava.model.Article;
-import com.snipex.shantu.androidarchitecturecomponentsmvvmretrofitwithjava.view_model.ArticleViewModel;
+import com.snipex.shantu.androidarchitecturecomponentsmvvmretrofitwithjava.adapter.userAdapter;
+
+import com.snipex.shantu.androidarchitecturecomponentsmvvmretrofitwithjava.model.User;
+
+import com.snipex.shantu.androidarchitecturecomponentsmvvmretrofitwithjava.view_model.UserViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView my_recycler_view;
     private ProgressBar progress_circular_movie_article;
     private LinearLayoutManager layoutManager;
-    private MovieArticleAdapter adapter;
-    private ArrayList<Article> articleArrayList = new ArrayList<>();
-    ArticleViewModel articleViewModel;
+    private userAdapter adapter;
+    private ArrayList<User> userArrayList = new ArrayList<>();
+    UserViewModel userViewModel;
 
 
     @Override
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         initialization();
 
-        getMovieArticles();
+        getUsers();
     }
 
     /**
@@ -56,11 +58,11 @@ public class MainActivity extends AppCompatActivity {
         my_recycler_view.setHasFixedSize(true);
 
         // adapter
-        adapter = new MovieArticleAdapter(MainActivity.this, articleArrayList);
+        adapter = new userAdapter(MainActivity.this, userArrayList);
         my_recycler_view.setAdapter(adapter);
 
         // View Model
-        articleViewModel = ViewModelProviders.of(this).get(ArticleViewModel.class);
+        userViewModel = ViewModelProviders.of(this).get(UserViewModel.class);
     }
 
     /**
@@ -68,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
      *
      * @param @null
      */
-    private void getMovieArticles() {
-        articleViewModel.getArticleResponseLiveData().observe(this, articleResponse -> {
-            if (articleResponse != null) {
+    private void getUsers() {
+        userViewModel.getUserResponseLiveData().observe(this, userRespone -> {
+            if (userRespone != null) {
 
                 progress_circular_movie_article.setVisibility(View.GONE);
-                List<Article> articles = articleResponse.getArticles();
-                articleArrayList.addAll(articles);
+                List<User> users = userRespone.getUsers();
+                userArrayList.addAll(users);
                 adapter.notifyDataSetChanged();
             }
         });
