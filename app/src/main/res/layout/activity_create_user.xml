@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@drawable/buttongradient"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@android:color/white"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.CreateUser">
+
+    <ProgressBar
+        android:id="@+id/progress_circular_movie_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+
+        />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="361dp"
+        android:layout_height="45dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="208dp"
+        app:layout_constraintBottom_toTopOf="@+id/SignInText"
+        app:layout_constraintEnd_toEndOf="@+id/Login"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/Login" />
+
+    <TextView
+        android:id="@+id/CreateAccounttext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="54dp"
+        android:layout_marginBottom="5dp"
+        android:text="Create Account."
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+
+
+        android:layout_marginEnd="196dp"
+        android:layout_marginBottom="52dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/FullName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateAccounttext" />
+
+    <EditText
+        android:id="@+id/FullName"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="17dp"
+        android:hint="Full Name"
+        app:layout_constraintBottom_toTopOf="@+id/EmailAddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <EditText
+        android:id="@+id/EmailAddress"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintStart_toStartOf="@+id/FullName"
+        app:layout_constraintTop_toBottomOf="@+id/FullName" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/Login"
+        app:layout_constraintStart_toStartOf="@+id/EmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/EmailAddress" />
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="358dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="303dp"
+        android:background="@drawable/buttongradient"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/SignInText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="33dp"
+        android:text="I am already a member."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign In"
+        android:textColor="#9C27B0"
+        android:textStyle="bold"
+        app:layout_constraintBaseline_toBaselineOf="@+id/SignInText"
+        app:layout_constraintStart_toEndOf="@+id/SignInText" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up to get started!"
+        app:layout_constraintStart_toStartOf="@+id/CreateAccounttext"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
